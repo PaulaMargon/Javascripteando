@@ -68,10 +68,50 @@ function esPrimo(numero) {
 
 // 6. Crea una funciÃ³n que reciba dos arrays y devuelva un nuevo array que contenga los elementos comunes entre ambos.
 
+
+function elementosComunes(array1, array2) {
+    // Usamos filter para quedarnos con los elementos que están en ambos arrays
+    return array1.filter(elemento => array2.includes(elemento));
+  }
+  
+  // Ejemplo de uso:
+  const a = [1, 2, 3, 4, 5];
+  const b = [3, 4, 5, 6, 7];
+  
+  const comunes = elementosComunes(a, b);
+  console.log(comunes); // Resultado: [3, 4, 5]
+  
 // 7. Crea una funciÃ³n que reciba un array de nÃºmeros y devuelva la suma de todos los nÃºmeros pares.
 
+function sumaPares(numeros) {
+    return numeros.filter(num => num % 2 === 0)
+                  .reduce((acc, curr) => acc + curr, 0);
+}
+
+// Ejemplo:
+console.log(sumaPares([1, 2, 3, 4])); // 6 (2+4)
+
 // 8. Crea una funciÃ³n que reciba un array de nÃºmeros y devuelva un nuevo array con cada nÃºmero elevado al cuadrado.
+function elevarCuadrado(numeros) {
+    return numeros.map(num => num ** 2);
+}
+
+// Ejemplo:
+console.log(elevarCuadrado([2, 3, 4])); // [4, 9, 16]
 
 // 9. Crea una funciÃ³n que reciba una cadena de texto y devuelva la misma cadena con las palabras en orden inverso.
+function invertirPalabras(texto) {
+    return texto.split(' ').reverse().join(' ');
+}
 
+// Ejemplo:
+console.log(invertirPalabras("El cielo es azul")); // "azul es cielo El
 // 10. Crea una funciÃ³n que calcule el factorial de un nÃºmero dado.
+
+function factorial(n) {
+    if (n < 0) throw new Error("Número negativo");
+    return n <= 1 ? 1 : n * factorial(n - 1);
+}
+
+// Ejemplo:
+console.log(factorial(5)); // 120 (5*4*3*2*1)
